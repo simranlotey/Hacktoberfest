@@ -30,5 +30,6 @@ def linear_search(arr, target):
 
 if __name__ == "__main__":
     import doctest
+
     doctest.testmod()
     print(linear_search([1, 5, 9, 15, 23, 56], 15))
