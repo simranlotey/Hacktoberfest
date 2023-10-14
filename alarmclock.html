@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Digital Clock and Alarm using JavaScript</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        background-color: #012d42;
+      }
+
+      .container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #clock {
+        font-family: "Orbitron", sans-serif;
+        font-size: 15vw;
+        background-image: linear-gradient(
+          180deg,
+          rgb(243 207 30) 0%,
+          rgb(183 172 39) 50%,
+          rgb(120 118 40) 100%
+        );
+
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+      }
+
+      input {
+        border: 2px solid #f0f0f0;
+        border-radius: 4px;
+        display: block;
+        font-size: 14px;
+        padding: 10px 15px;
+      }
+
+      .controls {
+        margin-top: 16px;
+      }
+
+      .button {
+        font-weight: bold;
+        border-radius: 5px;
+        border: none;
+        color: white;
+        padding: 8px 20px;
+        margin-left: 4px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+
+      .set-alarm {
+        background-color: green;
+      }
+
+      .clear-alarm {
+        background-color: #ff3860;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="clock"></div>
+      <input
+        onchange="setAlarmTime(this.value)"
+        name="alarmTime"
+        type="datetime-local"
+      />
+      <div class="controls">
+        <button onclick="setAlarm()" class="button set-alarm">Set alarm</button>
+        <button onclick="clearAlarm()" class="button clear-alarm">
+          Clear alarm
+        </button>
+      </div>
+    </div>
+    <script src="alarmclock.js"></script>
+  </body>
+</html>
