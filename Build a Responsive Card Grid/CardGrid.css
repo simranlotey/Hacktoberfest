@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(255, 251, 246);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.card-grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.card-item{
+    background-color: white;
+    z-index: 2;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 0 1.5rem #00000008;
+}
+
+@media only screen and (max-width: 768px){
+    .card-grid-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media only screen and (max-width: 392px){
+    .card-grid-container{
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+    .card-item{
+        padding: 1rem;
+    }
+}
