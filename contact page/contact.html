@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+            width: 30%;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2080c7;
+        }
+
+        .message {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .success {
+            background-color: #28a745;
+            color: #fff;
+        }
+
+        .error {
+            background-color: #dc3545;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="message success" id="success-message">Thank you for contacting us. We'll get back to you soon.</div>
+        <div class="message error" id="error-message">Please enter a valid email address.</div>
+    </div>
+
+    <script>
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+        const errorMessage = document.getElementById('error-message');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const emailInput = document.getElementById('email');
+            const emailValue = emailInput.value.trim();
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+            if (emailPattern.test(emailValue)) {
+                // Email is valid, show the success message
+                errorMessage.style.display = 'none';
+                successMessage.style.display = 'block';
+                contactForm.reset();
+            } else {
+                // Email is not valid, show an error message
+                errorMessage.style.display = 'block';
+                successMessage.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
