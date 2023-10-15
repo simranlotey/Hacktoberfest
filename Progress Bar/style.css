@@ -1,0 +1,27 @@
+#bar {
+  width: 100%;
+  background-color: rgb(184, 174, 240);
+}
+
+#progress {
+  width: 1%;
+  height: 30px;
+  background-color: rgb(87, 63, 228);
+}
+
+#button{
+  margin-top: 10px;
+  background-color: rgb(87, 63, 228);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#title{
+  color: rgb(87, 63, 228);
+}
