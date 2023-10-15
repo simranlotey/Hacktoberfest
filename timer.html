@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #timer {
+            font-size: 48px;
+        }
+        button {
+            font-size: 18px;
+            margin: 10px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Timer</h1>
+    <div id="timer">00:00:00</div>
+    <button id="startButton" onclick="startTimer()">Start</button>
+    <button id="pauseButton" onclick="pauseTimer()" disabled>Pause</button>
+    <button id="resetButton" onclick="resetTimer()" disabled>Reset</button>
+
+    <script>
+        let timerInterval;
+        let startTime;
+        let pausedTime = 0;
+        let isTimerRunning = false;
+
+        function startTimer() {
+            if (!isTimerRunning) {
+                isTimerRunning = true;
+                startTime = Date.now() - pausedTime;
+                timerInterval = setInterval(updateTimer, 1000);
+                document.getElementById('startButton').disabled = true;
+                document.getElementById('pauseButton').disabled = false;
+                document.getElementById('resetButton').disabled = false;
+            }
+        }
+
+        function pauseTimer() {
+            if (isTimerRunning) {
+                isTimerRunning = false;
+                clearInterval(timerInterval);
+                pausedTime = Date.now() - startTime;
+                document.getElementById('startButton').disabled = false;
+                document.getElementById('pauseButton').disabled = true;
+            }
+        }
+
+        function resetTimer() {
+            isTimerRunning = false;
+            clearInterval(timerInterval);
+            pausedTime = 0;
+            updateTimer(0);
+            document.getElementById('startButton').disabled = false;
+            document.getElementById('pauseButton').disabled = true;
+            document.getElementById('resetButton').disabled = true;
+            document.getElementById('timer').textContent = '00:00:00';
+        }
+
+        function updateTimer() {
+            const currentTime = Date.now() - startTime;
+            const hours = Math.floor(currentTime / 3600000);
+            const minutes = Math.floor((currentTime % 3600000) / 60000);
+            const seconds = Math.floor((currentTime % 60000) / 1000);
+            document.getElementById('timer').textContent = formatTime(hours) + ':' + formatTime(minutes) + ':' + formatTime(seconds);
+        }
+
+        function formatTime(time) {
+            return time < 10 ? '0' + time : time;
+        }
+    </script>
+</body>
+</html>
