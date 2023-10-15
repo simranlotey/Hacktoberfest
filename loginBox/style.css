@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family:Poppins ;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 55px;
+    background-color: transparent;
+    color: white;
+}
+
+header {
+    font-family: Poppins;
+}
+
+header h2 {
+    font-size: 1.5em;
+    font-weight: 800;
+    margin-right: auto;
+    padding-top: 6px;
+    padding-left: 55px;
+}
+
+.navigation ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 45px;
+}
+
+.navigation ul li {
+    padding: 12px 22px;
+    list-style: none;
+}
+
+.navigation ul li a {
+    font-size: 0.9em;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+    transition: 0.4s ease;
+
+}
+
+.navigation a {
+    position: relative;
+}
+
+.navigation a:hover{
+    text-decoration: underline;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transfrom 0.5s;
+}
+
+.navigationv a:hover::after {
+    transform: scaleX(1);
+}
+
+#login-button {
+    font-size: 0.9em;
+    font-weight: 600;
+    background: transparent;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 4px;
+    padding: 3px 20px;
+    cursor: pointer;
+    transition: 0.5s;
+    color: white
+}
+
+#login-button:hover {
+    background: white;
+    color: black
+}
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url(muhammad-nafay-by-muhammad-nafay-deer-and-the-fireflies-fant.jpg)no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: rgb(22, 40, 53);
+}
+
+.login-box .box{
+    /*display: none;*/
+}
+
+.login-box .reg-box{
+    position: absolute;
+    transform: translateX(400px);
+}
+
+.login-box{
+    display: flex;
+    width: 400px;
+    height: 440px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(250, 235, 235);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    transition: 0.3s ease;
+    overflow: hidden;
+    transform: scale(0);
+}
+
+.login-box.active-popup{
+    transform: scale(1);
+}
+
+.login-box.active{
+    height: 520px;
+}
+.login-box.active.reg-box.close{
+    position: relative;
+    top: 19px;
+    right: 0;
+}
+.login-box.active .box{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.login-box.active .box{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.login-box.active .reg-box{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+.login-box.active .reg-box{
+    transition: 0.18s ease;
+    transform: translateX(0);
+}
+
+.login-box .close{
+    position: absolute;
+    top: 0;
+    right:0;
+    width: 45px;
+    height: 45px;
+    background-color: rgb(22, 40, 53);
+    font-size: 2em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.login-box h2{
+    text-align: center;
+    font-size: 1.7em;
+    font-weight: 600;
+    color: rgb(22,40,53);
+}
+
+.inputbox{
+    position: relative;
+    border-bottom: 2px solid;
+    margin: 30px 0;
+    width: 310px;
+}
+.inputbox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.5s ease;
+}
+.inputbox input:focus~label,
+.inputbox input:valid~label{
+    top: -5px;
+}
+.inputbox input{
+    background: transparent;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 50px;
+    padding: 0 35px 0 5px;
+    cursor:text;
+    color: white;
+}
+.inputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    
+}
+
+.forgot{
+    font-size: 0.85rem;
+    
+}
+.forgot a{
+    position: relative;
+    left: 88px;
+    color: rgb(22,40,53);
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+.forgot a:hover{
+    text-decoration: underline;
+}
+
+.signinbutton{
+    width: 100%;
+    border-radius: 20px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    font-size: 1rem;
+    background-color: rgb(22, 40, 53);
+    color: white;
+    cursor: pointer;
+
+    
+}
+
+.signin{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-size: 0.85rem;
+}
+.signin a{
+    color: white;
+    text-decoration: none;
+    padding-left: 5px;
+    cursor: pointer;
+    color: rgb(22,40,53);
+    font-weight: 600;
+    transition: 0.5s ease;
+}
+.signin a:hover{
+    text-decoration: underline;
+}
+
+
+
