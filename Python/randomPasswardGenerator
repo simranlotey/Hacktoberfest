@@ -1,0 +1,29 @@
+import random
+import string
+
+def generate_password(length, use_digits=True, use_special_chars=True):
+    # Define character sets
+    chars = string.ascii_letters
+    if use_digits:
+        chars += string.digits
+    if use_special_chars:
+        chars += string.punctuation
+
+    # Generate the password
+    password = ''.join(random.choice(chars) for _ in range(length))
+    return password
+
+def main():
+    print("Password Generator")
+    length = int(input("Enter the desired password length: "))
+
+    use_digits = input("Include digits (yes/no)? ").strip().lower() in ["yes", "y"]
+    use_special_chars = input("Include special characters (yes/no)? ").strip().lower() in ["yes", "y"]
+
+    password = generate_password(length, use_digits, use_special_chars)
+    print("Your random password is:", password)
+
+if __name__ == "__main__":
+    main()
+
+                       
