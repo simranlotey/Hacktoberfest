@@ -36,4 +36,4 @@ const listener = (data: string) => {
 };
 eventMaker.on("event1", listener);
 
-eventMaker.emit("event1", "this is a test lmao");
+eventMaker.emit("event1", "this is a test lol");
