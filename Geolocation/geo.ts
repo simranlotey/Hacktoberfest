@@ -1,39 +1,44 @@
+const getLocationButton = document.getElementById('getLocationButton') as HTMLButtonElement;
+const locationInfo = document.getElementById('locationInfo') as HTMLParagraphElement;
 
-interface Coordinates {
-    latitude: number;
-    longitude: number;
-  }
-  
-  class GeolocationService {
-    static getUserCoordinates(): Promise<Coordinates> {
-      return new Promise((resolve, reject) => {
-        if (!navigator.geolocation) {
-            reject(new Error('Browser does not support geolocation.'));
-        } else {
-          navigator.geolocation.getCurrentPosition(
-            (position) => {
-              const { latitude, longitude } = position.coords;
-              resolve({ latitude, longitude });
-            },
-            (error) => {
-              switch (error.code) {
-                case error.PERMISSION_DENIED:
-                    reject(new Error('User denied.'));
-                  break;
-                case error.POSITION_UNAVAILABLE:
-                    reject(new Error('Unavailable.'));
-                  break;
-                case error.TIMEOUT:
-                    reject(new Error('Timed out.'));
-                  break;
-                default:
-                    reject(new Error('Something broke and caused an error.'));
-                  break;
-              }
-            }
-          );
+// Check if geolocation is available in the browser
+if ('geolocation' in navigator) {
+    getLocationButton.addEventListener('click', getLocation);
+} else {
+    getLocationButton.disabled = true;
+    locationInfo.innerText = 'Geolocation is not available in your browser.';
+}
+
+// Get the user's geolocation
+function getLocation() {
+    getLocationButton.disabled = true;
+    locationInfo.innerText = 'Fetching location...';
+
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+            locationInfo.innerText = `Latitude: ${latitude}, Longitude: ${longitude}`;
+        },
+        (error) => {
+            getLocationButton.disabled = false;
+            locationInfo.innerText = `Error: ${getErrorString(error)}`;
         }
-      });
+    );
+}
+
+// Error Handling
+function getErrorString(error: GeolocationPositionError): string {
+    switch (error.code) {
+        case error.PERMISSION_DENIED:
+            return 'User denied the request for geolocation.';
+        case error.POSITION_UNAVAILABLE:
+            return 'Location information is unavailable.';
+        case error.TIMEOUT:
+            return 'The request to get user location timed out.';
+        case error.UNKNOWN_ERROR:
+            return 'An unknown error occurred.';
+        default:
+            return 'An unspecified error occurred.';
     }
-  }
-  
+}
