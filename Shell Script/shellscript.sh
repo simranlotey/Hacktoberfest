@@ -31,14 +31,14 @@ done
 ###################################################### 	output ##########################################################################
 
 
-element 0 : apple
-element 1 : mango
-element 2 : banana
-element 3 : orange
-length: 4
-whole array: apple mango banana orange
-looping over array elements
-apple
-mango
-banana
-orange
+#element 0 : apple
+#element 1 : mango
+#element 2 : banana
+#element 3 : orange
+#length: 4
+#whole array: apple mango banana orange
+#looping over array elements
+#apple
+#mango
+#banana
+#orange
