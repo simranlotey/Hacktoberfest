@@ -1,44 +1,35 @@
 #!/bin/bash
-#
-# File           : ls_014_01_ch6_array.sh
-# Title          : Array
-# Description    : A script to show how to declare an array and access its elements
-#
-################################################### program ########################################################################
-# Declare an array
-FRUITS=(apple mango banana orange)
 
-# Print value of each element
-echo "element 0: ${FRUITS[0]}"
-echo "element 1: ${FRUITS[1]}"
-echo "element 2: ${FRUITS[2]}"
-echo "element 3: ${FRUITS[3]}"
+# Initialize score
+score=0
 
-# Print size / length of array
-echo "Length: ${#FRUITS[@]}"
-echo "Whole array: ${FRUITS[@]}"
-echo "Whole array: ${FRUITS[*]}"
+# Function to ask a question and check the answer
+ask_question() {
+    local question="$1"
+    local answer="$2"
 
-echo "Looping over array elements"
-# Iterate over array elements
-for ITEM in ${FRUITS[@]}
-do
-    echo $ITEM
-done
+    echo -e "Question: $question"
+    read -p "Your answer: " user_answer
 
+    if [ "$user_answer" = "$answer" ]; then
+        echo "Correct!"
+        ((score++))
+    else
+        echo "Incorrect. The correct answer is: $answer"
+    fi
+    echo
+}
 
+# Main quiz
+clear
+echo "Welcome to the Quiz!"
+echo
 
-###################################################### 	output ##########################################################################
+ask_question "What is the capital of France?" "Paris"
+ask_question "What is the largest planet in our solar system?" "Jupiter"
+ask_question "How many continents are there on Earth?" "7"
+ask_question "What is the boiling point of water in Celsius?" "100"
 
-
-#element 0 : apple
-#element 1 : mango
-#element 2 : banana
-#element 3 : orange
-#length: 4
-#whole array: apple mango banana orange
-#looping over array elements
-#apple
-#mango
-#banana
-#orange
+# Display the final score
+clear
+echo "Quiz completed! Your score: $score / 4"
