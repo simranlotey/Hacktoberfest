@@ -1,0 +1,48 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+}
+
+.login_heading{
+    color: blue;
+    font-weight: bolder;
+    font-size: 25px;
+    padding-left: 3px;
+}
+
+.form_container{
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 7px;
+    opacity: 0.9;
+}
+
+.form_btn{
+    outline: none;
+    border: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+
+}
+
+.user{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.pad{
+    margin-bottom: 1rem;
+}
+
+input{
+    width: 15rem;
+    height: 2.5rem;
+    padding: 10px;
+    border: 2px solid rgb(0, 0, 0, 0.2);
+    border-radius: 5px;
+    outline: none;
+
+}

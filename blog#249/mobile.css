@@ -1,0 +1,18 @@
+@media(max-width:810px){
+    .search{
+        display: none;
+    }
+    .about{
+        display: none;
+    }
+}
+@media(max-width:690px){
+    .sidebar_container{
+        display: none;
+    }
+    .articles_space{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
