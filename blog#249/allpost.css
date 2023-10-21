@@ -1,0 +1,85 @@
+.allpost_card{
+    background: #fff;
+    margin-top: 2rem;
+    color: #000;
+    border-radius: 8px;
+    width: 20rem;
+    height: 10rem;
+    opacity: 0.9;
+    padding: 20px;
+    margin: 1rem;
+
+}
+
+.allpost_cards{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.all_post_no_grid{
+    display: block;
+}
+
+.allpost_card_para {
+    margin-bottom: 17px;
+}
+
+.allpost_card_title {
+    margin-bottom: 10px;
+    cursor: pointer;
+
+}
+.allpost_card_title a {
+   color: black;
+   
+
+}
+.allpost_card_title a:hover {
+   color: blue;
+
+
+}
+
+.allpost_card_author{
+    cursor: pointer;
+    
+}
+
+.navigateBapu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigate{
+    background: #fff;
+    padding: 15px 9px;
+    color: black;
+    border-radius: 7px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.navigate ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigate ul li{
+    margin-right: 1rem;
+    padding: 4px 9px;
+}
+.navigate ul li:hover{
+    margin-right: 1rem;
+    background: #545abf36;
+    padding: 4px 9px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.navigate:hover{
+    box-shadow: #1e12de4a 0px 0px 16px 6px;
+}
+

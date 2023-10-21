@@ -1,0 +1,134 @@
+.main {
+    background: url('bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    max-width: 120rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.profile_image {
+    width: 60px;
+    height: 60px;
+}
+
+.profile_image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.blog_profile_container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+@media(max-width:600px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 13%;
+    }
+}
+
+.profile_blog {
+    width: 15rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0.8;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.profile_blog_grids {
+    width: 7rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.profile_blog_grids:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.profile_image {
+    display: inline-block;
+    text-align: center;
+}
+
+.profile_name {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.profile_grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.share_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 0.6rem;
+}
+
+.profile_grid {
+    width: 15rem;
+}
+
+.logout {
+    text-align: center;
+    padding: 5px;
+    background-color: red;
+    border-radius: 5px;
+    margin-top: 0.6rem;
+    cursor: pointer;
+}
+
+.logout:hover {
+
+    background-color: rgb(111, 6, 6);
+}
+
+.back {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+    border-radius: 15px;
+    margin-bottom: 0.6rem;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bolder;
+}
+
+.back a {
+    color: #fff;
+}
+
+.back:hover {
+    background-color: rgba(255, 255, 255, 0.463);
+}
+
+.back a:hover {
+    color: #000;
+}
