@@ -56,6 +56,9 @@ We encourage contributions in the form of bug fixes, feature enhancements, or th
 10. Your PR is Merged:
     - Once your PR is approved and merged, your contribution will become a part of the project.
 
+## Code of Conduct 🤝
+
+Please be aware that we uphold a [Code of Conduct](CODE_OF_CONDUCT.md) to ensure a positive and respectful environment for all contributors. As a participant in this project, you pledge to abide by the Code of Conduct.
 
 Let's work together to create a valuable resource for programmers, and thank you for contributing to "programs"
 
