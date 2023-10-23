@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Imager-viewer</title>
+</head>
+<body>
+    <h1>Imager-viewer</h1>
+    <form method="POST" action="/">
+        <label for="image_directory">Path to picture folder:</label>
+        <input type="text" id="image_directory" name="image_directory" value="{{ user_directory }}">
+        <input type="submit" value="Submit">
+    </form>
+    {% if image_files %}
+    <h2>Picture in this folder:</h2>
+    <ul>
+        {% for image in image_files %}
+        <li>
+            <a href="/view/{{ image }}" target="_blank">{{ image }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
