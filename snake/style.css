@@ -1,0 +1,28 @@
+#game-canvas {
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(to right, rgb(20, 20, 20), rgb(59, 58, 58),rgb(35, 34, 34));
+}
+
+.snake {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    animation: snake-move 1s linear infinite;
+}
+
+@keyframes snake-move {
+    0% {
+        transform: translateX(0px);
+    }
+
+    100% {
+        transform: translateX(10px);
+    }
+}
+
+.food {
+    position: absolute;
+    background-color: red;
+    outline: 2px solid yellow;
+}
