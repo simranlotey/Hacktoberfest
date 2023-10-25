@@ -1,0 +1,202 @@
+body {
+  background-image: url(http://braccousa.com/wp-content/uploads/2013/07/Dark-wooden-website-background.jpg);
+  background-size: cover;
+}
+.noSelect {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+.gameContainer {
+	position:relative;
+	width:440px;
+	height:440px;
+	margin:0 auto;
+  margin-top: 50px;
+  border: solid 1px black;
+  border-radius: 50%;
+  background-color: grey;
+}
+
+.fourButton {
+	position:absolute;
+	width:190px;
+	height:190px;
+  margin: 20px;
+  pointer-events: none;
+}
+.fourButton:active {
+  opacity: .5;
+}
+.activated {
+  opacity: .5;
+}
+#buttonGre {
+	top:0;
+	left:0;
+	background-color:green;
+	border-radius:100% 0 0 0;
+}
+#buttonRed {
+	top:0;
+	right:0;
+	background-color:red;
+	border-radius:0 100% 0 0 ;
+}
+#buttonYel {
+	bottom:0;
+	left:0;
+	background-color:yellow;
+	border-radius:0 0 0 100%;
+}
+#buttonBlu {
+	bottom:0;
+	right:0;
+	background-color:blue;
+	border-radius:0 0 100% 0 ;
+}
+#center {
+  position:absolute;
+  background-color:white;
+  border: 20px solid grey;
+	width:200px;
+	height:200px;
+	top:120px;
+	left:120px;
+	border-radius:50%;
+}
+#textTitle {
+  height: 70px;
+  line-height: 90px;
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  color: black;
+}
+#countBox {
+  vertical-align: top;
+  display: inline-block;
+  height: 50px;
+  width: 50.3px;
+}
+#countDisplay {
+  border: solid 3px black;
+  border-radius: 20%;
+  height: 50%;
+  margin: 0px 6px 0px 6px;
+  background: red;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+#countText {
+  height: 30%;
+  margin: 4px 6px 0px 6px;
+  font-size: 10px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+#displayText {
+  opacity: 0.3;
+}
+#startBox {
+  vertical-align: top;
+  display: inline-block;
+  height: 50px;
+  width: 50.4px;
+}
+#startButton {
+  border: solid 3px black;
+  border-radius: 50%;
+  height: 50%;
+  margin: 0px 12.7px 0px 12.7px;
+  background: red;
+  font-size: 20px;
+  line-height: 17px;
+  text-align: center;
+}
+#startText {
+  height: 30%;
+  margin: 4px 6px 0px 6px;
+  font-size: 10px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+#strictBox {
+  vertical-align: top;
+  display: inline-block;
+  height: 50px;
+  width: 50.4px;
+}
+#strictButton {
+  border: solid 3px black;
+  border-radius: 50%;
+  height: 50%;
+  width: 25px;
+  margin: 0px 12.5px 0px 12.5px;
+  background: yellow;
+  color: black;
+  font-size: 17px;
+  line-height: 20px;
+  text-align: center;
+}
+#strictText {
+  height: 30%;
+  margin: 4px 6px 0px 6px;
+  font-size: 10px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+#onText {
+  vertical-align: top;
+  display: inline-block;
+  height: 40px;
+  line-height: 25px;
+  width: 60px;
+  font-size: 10px;
+  color: black;
+  font-weight: bold;
+  text-align: right;
+}
+#powerSwitch {
+  background: grey;
+  vertical-align: top;
+  display: inline-block;
+  border: solid 1px black;
+  margin-top: 5px;
+  height: 15px;
+  width: 30px;
+}
+#buttonOn {
+  visibility: hidden;
+  background: blue;
+  vertical-align: top;
+  display: inline-block;
+  border-radius: 15%;
+  margin: 1px 2.8px 0px 1px;
+  height: 10px;
+  width: 12px;
+}
+#buttonOff {
+  background: blue;
+  vertical-align: top;
+  display: inline-block;
+  border-radius: 15%;
+  margin: 1px 0px 0px 0px;
+  height: 10px;
+  width: 12px;
+}
+#offText {
+  vertical-align: top;
+  display: inline-block;
+  height: 40px;
+  line-height: 25px;
+  width: 60px;
+  font-size: 10px;
+  color: black;
+  font-weight: bold;
+}
