@@ -1,0 +1,58 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+
+body {
+    margin-top: 100px;
+    background-color: white;
+}
+
+.selections {
+    display: flex;
+    justify-content: center;
+}
+
+.selection {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 4rem;
+    transition: 100ms;
+}
+
+.selection:hover {
+    transform: scale(1.2);
+}
+
+.results {
+    margin-top: 1rem;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    font-size: 30px;
+    font-family: Acme;
+    align-items: center;
+}
+
+.result-score {
+    margin-left: .1rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.result-selection {
+    opacity: .5;
+}
+
+.result-selection.winner {
+    opacity: 1;
+    font-size: 2rem;
+}
+
+.h1 {
+  text-align: center;
+  font-size: 50px;
+   font-family: Acme;
+}
