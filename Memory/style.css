@@ -1,0 +1,20 @@
+body {
+    background: linear-gradient(to right, rgba(0,0,0,0), teal), linear-gradient(to right, rgba(255,0,100,.3), rgba(255,100,127,.2)), linear-gradient(to top right, yellow, rgba(0,0,0,0)), radial-gradient(closest-corner at 20% 80%, yellow, red);
+    background-attachment: fixed;
+}
+
+.tiles{
+    margin: 48px auto;
+    width: max-content;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 16px;
+}
+
+.tile{
+    height: 100px;
+    background: #111111;
+    border: 5px solid #444444;
+    cursor: pointer;
+
+}
