@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sci-Fi Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type = "image/png" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="Calc.js"></script>
+</head>
+<body>
+    <div class="Calculator">
+        <div class="output">
+            <input class ="screen" id="display" type="text" onkeydown="execute(event)" autofocus><br>
+        </div>
+        <div class="btn">
+            <button id="sin"  onclick= "display('sin(')">sin</button>
+            <button id="cos"  onclick= "display('cos(')">cos</button>
+            <button id="tan"  onclick= "display('tan(')">tan</button>
+            <button id="log"  onclick= "display('log(')">log</button>
+            <button id="ln"   onclick= "display('ln(')"> ln</button><br>
+            <button id="sqrt" onclick= "display('sqrt(')">sqrt</button>
+            <button id="^"    onclick= "display('^')">^</button>
+            <button id="exp"  onclick= "display('e^(')">exp</button>
+            <button id="("    onclick= "display('(')">&#40;</button>
+            <button id=")"    onclick= "display(')')">&#41;</button><br>
+            <button id="7"    onclick= "display('7')">7</button>
+            <button id="8"    onclick= "display('8')">8</button>
+            <button id="9"    onclick= "display('9')">9</button>
+            <button id="DEL"  onclick= "remove()">DEL</button>
+            <button id="AC"   onclick= "clearAll()">AC</button><br>
+            <button id="4"    onclick= "display('4')">4</button>
+            <button id="5"    onclick= "display('5')">5</button>
+            <button id="6"    onclick= "display('6')">6</button>
+            <button id="x"    onclick= "display('*')">*</button>
+            <button id="/"    onclick= "display('/')">/</button><br>
+            <button id="1"    onclick= "display('1')">1</button>
+            <button id="2"    onclick= "display('2')">2</button>
+            <button id="3"    onclick= "display('3')">3</button>
+            <button id="+"    onclick= "display('+')">+</button>
+            <button id="-"    onclick= "display('-')">-</button><br>
+            <button id="0"    onclick= "display('0')">0</button>
+            <button id="."    onclick= "display('.')">.</button>
+            <button id="PI"   onclick= "display('PI')">PI</button>
+            <button id="e"    onclick= "display('e')">e</button>
+            <button id="="    onclick= "compute()">=</button><br>
+        </div>
+        <h4>Created by Devansh Bansal</h4>
+    </div>
+</body>
+</html>
+
+    
