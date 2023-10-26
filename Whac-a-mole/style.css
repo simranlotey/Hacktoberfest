@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img {
+  width: 100%;
+  display: block;
+}
+body {
+  font-family: "Paytone One", sans-serif;
+  background-color: #d4f0a5;
+  cursor: pointer;
+  /* overflow: hidden; */
+}
+.count {
+  text-align: center;
+  margin-top: 30px;
+  color: #000000;
+}
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px;
+}
+.item {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.mole {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  background-color: #d5d6db;
+  border-radius: 50%;
+  transition: all 300ms ease;
+}
+.mole img {
+  padding: 7px;
+}
+.mole-hide {
+  bottom: 10px;
+  width: 50px;
+}
+.mole-appear {
+  width: 170px;
+  bottom: 50px;
+}
+.bush {
+  width: 160px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.whack-text {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 26px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+/* Your existing CSS rules */
+
+.btn {
+  background-color: #accdf0;
+  color: #fff;
+  font-size: 24px;
+  border: none;
+  border-radius: 10%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Additional styling for the button on hover */
+.btn:hover {
+  background-color: #9bf498;
+}
