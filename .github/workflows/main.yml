@@ -1,27 +1,20 @@
 name: Auto sync forked repo
-
 on:
   schedule:
     - cron: '55 23 * * *' # runs at 11:55 pm
   push:
-    branches:
+    branches: 
       - master
-env:
-  DRY_RUN: false
-  REPOSITORIES: simranlotey/programs
-  
-  WORKFLOW_FILES: |
 
 jobs:
   Github_Workflow_Sync:
     runs-on: ubuntu-latest
     steps:
-      - name: Fetching Local Repository
-        uses: actions/checkout@master
-      - name: Running Workflow Sync
-        uses: varunsridharan/action-github-workflow-sync@main
+      - name: Sync and merge upstream repository with your current repository
+        uses: dabreadman/sync-upstream-repo@v1.0.0.b 
         with:
-          DRY_RUN: ${{ env.DRY_RUN }}
-          REPOSITORIES: ${{ env.REPOSITORIES }}
-          WORKFLOW_FILES: ${{ env.WORKFLOW_FILES }}
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          upstream_repo: "https://github.com/simranlotey/programs.git"
+          upstream_branch: master
+          downstream_branch: master
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+
