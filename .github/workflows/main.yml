@@ -1,20 +1,31 @@
-name: Auto sync forked repo
+---
+name: Sync Forked Repo
+
+env:
+  UPSTREAM_URL: "https://github.com/simranlotey/programs.git"
+  WORKFLOW_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+  UPSTREAM_BRANCH: "master"
+  DOWNSTREAM_BRANCH: "master"
+  MERGE_ARGS: ""
+  PUSH_ARGS: ""
+
 on:
   schedule:
-    - cron: '55 23 * * *' # runs at 11:55 pm
-  push:
-    branches: 
-      - master
+    - cron: '55 23 * * *'
+  # Allows manual workflow run (must in default branch to work)
+  workflow_dispatch:
 
 jobs:
-  Github_Workflow_Sync:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Sync and merge upstream repository with your current repository
-        uses: dabreadman/sync-upstream-repo@v1.0.0.b 
+      - name: GitHub Sync to Upstream Repository
+        uses: dabreadman/sync-upstream-repo@v1.2.0.b
         with:
-          upstream_repo: "https://github.com/simranlotey/programs.git"
-          upstream_branch: master
-          downstream_branch: master
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          upstream_repo: ${{ env.UPSTREAM_URL }}
+          upstream_branch: ${{ env.UPSTREAM_BRANCH }}
+          downstream_branch: ${{ env.DOWNSTREAM_BRANCH }}
+          token: ${{ env.WORKFLOW_TOKEN }}
+          merge_args: ${{ env.MERGE_ARGS }}
+          push_args: ${{ env.PUSH_ARGS }}
 
