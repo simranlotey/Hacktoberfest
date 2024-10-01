@@ -1,0 +1,49 @@
+class Asset:
+    def __init__(self, name, quantity, price):
+        self.name = name
+        self.quantity = quantity
+        self.price = price
+
+    def total_value(self):
+        return self.quantity * self.price
+
+    def __str__(self):
+        return f"{self.name} - Quantity: {self.quantity}, Price: ${self.price:.2f}, Total Value: ${self.total_value():.2f}"
+
+class Wallet:
+    def __init__(self):
+        self.assets = []
+
+    def add_asset(self, name, quantity, price):
+        asset = Asset(name, quantity, price)
+        self.assets.append(asset)
+
+    def remove_asset(self, name):
+        self.assets = [asset for asset in self.assets if asset.name != name]
+
+    def total_wallet_value(self):
+        return sum(asset.total_value() for asset in self.assets)
+
+    def show_wallet(self):
+        if not self.assets:
+            print("The wallet is empty.")
+        else:
+            for asset in self.assets:
+                print(asset)
+            print(f"Total wallet value: ${self.total_wallet_value():.2f}")
+
+# Example usage:
+wallet = Wallet()
+
+# Add assets
+wallet.add_asset("Stock XYZ", 10, 50.0)
+wallet.add_asset("Bitcoin", 0.01, 30000.0)
+
+# Show wallet
+wallet.show_wallet()
+
+# Remove asset
+wallet.remove_asset("Stock XYZ")
+
+# Show wallet after removing an asset
+wallet.show_wallet()
