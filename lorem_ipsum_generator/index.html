@@ -1,0 +1,72 @@
+<!-- Index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Lorem Ipsum Generator</h1>
+        <button id="darkModeToggle">Toggle Dark Mode</button>
+    </header>
+    <main>
+        <div class="options" role="form" aria-label="Lorem Ipsum Generator Options">
+            <div class="paragraphs">
+                <label for="paragraphs">Paragraphs:</label>
+                <input type="range" id="paragraphs" min="1" max="50" value="1" aria-label="Number of paragraphs">
+                <span id="paragraphsValue">1</span>
+            </div>
+            <div class="words">
+                <label for="words">Words per Paragraph:</label>
+                <input type="range" id="words" min="1" max="100" value="10">
+                <span id="wordsValue">10</span>
+            </div>
+            <div class="tags">
+                <label for="tags">Tag:</label>
+                <select id="tags" aria-label="HTML tag for paragraphs">
+                </select>
+            </div>
+            <div class="include">
+                <label for="include">Include HTML:</label>
+                <select id="include">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+            <button id="generate">Generate Lorem Ipsum</button>
+        </div>
+        <div class="output">
+          
+            <!-- Lorem Ipsum text will
+                 be displayed here -->
+        </div>
+        <div class="custom-text">
+            <label for="customText">Custom starting text (optional):</label>
+            <textarea id="customText" rows="3"></textarea>
+        </div>
+        <div class="language">
+            <label for="language">Language:</label>
+            <select id="language">
+                <option value="latin">Latin</option>
+                <option value="english">English</option>
+                <option value="spanish">Spanish</option>
+            </select>
+        </div>
+        <div class="formatting">
+            <label>Formatting:</label>
+            <input type="checkbox" id="uppercase" name="uppercase">
+            <label for="uppercase">UPPERCASE</label>
+            <input type="checkbox" id="capitalize" name="capitalize">
+            <label for="capitalize">Capitalize First Letter</label>
+        </div>
+    </main>
+    <script src="script.js">  </script>
+</body>
+
+</html>
