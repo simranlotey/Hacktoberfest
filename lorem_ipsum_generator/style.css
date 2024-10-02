@@ -1,0 +1,174 @@
+/* Style.css*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 2rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.options {
+    margin-bottom: 2rem;
+}
+
+.options label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #34495e;
+}
+
+.options input[type="range"],
+.options select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+    background-color: #ecf0f1;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+}
+
+.options select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2334495e' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    padding-right: 2.5rem;
+}
+
+.options button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.options button:hover {
+    background-color: #2980b9;
+}
+
+.output {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 4px;
+    border: 2px solid #3498db;
+    min-height: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #34495e;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+body.dark-mode header {
+    background-color: #34495e;
+}
+
+body.dark-mode main {
+    background-color: #34495e;
+}
+
+body.dark-mode .options label {
+    color: #ecf0f1;
+}
+
+body.dark-mode .options input[type="range"],
+body.dark-mode .options select {
+    background-color: #2c3e50;
+    border-color: #7f8c8d;
+    color: #ecf0f1;
+}
+
+body.dark-mode .output {
+    background-color: #2c3e50;
+    border-color: #3498db;
+    color: #ecf0f1;
+}
+
+#darkModeToggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+body.dark-mode #darkModeToggle {
+    background-color: #3498db;
+    color: #ecf0f1;
+}
+
+/* Add styles for the copy button */
+.output button {
+    display: block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #2ecc71;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.output button:hover {
+    background-color: #27ae60;
+}
+
+body.dark-mode .output button {
+    background-color: #3498db;
+}
+
+body.dark-mode .output button:hover {
+    background-color: #2980b9;
+}
