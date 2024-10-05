@@ -1,0 +1,3 @@
+[submodule "Hacktoberfest"]
+	path = Hacktoberfest
+	url = https://github.com/RashmitTopG/Thala-Calculator.git
