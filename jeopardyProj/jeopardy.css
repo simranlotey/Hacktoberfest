@@ -1,0 +1,48 @@
+body {
+  font-family: 'Copse', sans-serif;
+  background-color: #1e3a5f;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #fff;
+}
+
+#game-board {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #1e3a5f;
+  border: 2px solid #c5b358;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #c5b358;
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #1e3a5f;
+  color: #c5b358;
+  font-size: 1.2em;
+}
+
+td {
+  background-color: #2a4d7f;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+td:hover {
+  background-color: #3b6aa0;
+}
