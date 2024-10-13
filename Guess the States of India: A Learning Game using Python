@@ -1,0 +1,46 @@
+# List of specified Indian states for the game
+states_of_india = ["Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", 
+                   "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka", 
+                   "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", 
+                   "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", 
+                   "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh"]
+
+# Introduction message for the game
+def welcome_message():
+    print("\nWelcome to 'Guess the States of India'!")
+    print("Test your knowledge of Indian geography by guessing the names of Indian states.")
+    print("You can type 'exit' at any time to quit the game.")
+    print("Let's see how many states you can guess correctly!\n")
+
+# Main game loop
+def start_game():
+    correct_guesses = []
+    score = 0
+    total_states = len(states_of_india)
+
+    while len(correct_guesses) < total_states:
+        guess = input("Enter the name of a state: ").title()
+
+        if guess.lower() == 'exit':
+            break
+
+        if guess in states_of_india and guess not in correct_guesses:
+            correct_guesses.append(guess)
+            score += 1
+            print(f"Correct! You've guessed {score} out of {total_states} states.")
+        elif guess in correct_guesses:
+            print(f"You already guessed {guess}. Try another state!")
+        else:
+            print(f"{guess} is not a valid state or you've already guessed it. Try again.")
+
+    # Game summary
+    print(f"\nGame Over! You guessed {score} out of {total_states} states.")
+    if score == total_states:
+        print("Fantastic! You guessed all the states!")
+    else:
+        print("Keep practicing to learn all the states of India!")
+
+# Running the game
+if __name__ == "__main__":
+    welcome_message()
+    start_game()
