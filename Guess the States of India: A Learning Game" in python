@@ -1,0 +1,46 @@
+import random
+
+# List of Indian states
+states_of_india = [
+    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", 
+    "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", 
+    "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", 
+    "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", 
+    "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", 
+    "Uttar Pradesh", "Uttarakhand", "West Bengal"
+]
+
+# Shuffle the list for randomness
+random.shuffle(states_of_india)
+
+# Instructions for the player
+print("Welcome to 'Guess the States of India: A Learning Game'!")
+print("Try to guess the names of Indian states. Type 'exit' to quit at any time.")
+
+# Variables to keep track of guesses
+correct_guesses = []
+attempts = 0
+
+# Game loop
+while len(correct_guesses) < len(states_of_india):
+    guess = input(f"Guess a state ({len(correct_guesses)}/{len(states_of_india)} correct so far): ").strip()
+    
+    if guess.lower() == 'exit':
+        print("Thanks for playing!")
+        break
+    
+    if guess in states_of_india and guess not in correct_guesses:
+        correct_guesses.append(guess)
+        print(f"Correct! You have guessed {len(correct_guesses)} states so far.")
+    elif guess in correct_guesses:
+        print(f"You already guessed {guess}. Try another state!")
+    else:
+        print(f"Incorrect guess. Try again!")
+
+    attempts += 1
+
+# End of game feedback
+if len(correct_guesses) == len(states_of_india):
+    print(f"Congratulations! You've guessed all the states in {attempts} attempts.")
+else:
+    print(f"You guessed {len(correct_guesses)} states. Better luck next time!")
