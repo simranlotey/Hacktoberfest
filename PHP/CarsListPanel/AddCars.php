@@ -1,10 +1,16 @@
 <?php
 	require_once "pdo.php";                                                      //Add
+	session_start();
+	if (  isset($_SESSION['user_id']) )
+	{
+		die('Not logged in');
+	}
+	if ( isset($_POST['cancel'] ) )
+	{         //Check for login or index
+		header("Location: view.php");
+		return;
+	}
 
-	// if (  isset($_SESSION['user_id']) )
-	// {
-	// 	die('Not logged in');
-	// }
 	function test_input($data)
 	{
         $data = trim($data);
@@ -18,18 +24,13 @@
 		if(!isset($_POST['name']))
 		{
 			echo("Name is missing!!!");
+
 		}
+
 		else if(!isset($_POST['email']))
 		{
 			echo("Email is missing!!!");
-		}
-		else if(!isset($_POST['password']))
-		{
-			echo("Password is missing!!!");
-		}
-		else if($_POST['confirmpassword']!=$_POST['password'])
-		{
-			echo("Passwords do not match!!!");
+
 		}
 		else if( isset($_POST['name']) && isset($_POST['email']))
 		{
@@ -50,51 +51,35 @@
 				else
 				{
 					echo("<p>Handling POST data...</p>\n");
-					$sql = "INSERT INTO users (name,email,password,userRole) VALUES (:name, :em,:password,:userRole)";
+					$sql = "INSERT INTO users (name,email,password,userRole) VALUES (:name, :em, :password,:userRole)";
 					$stmt = $pdo->prepare($sql);
 
-					$stmt->execute(array(':name' => $_POST['name'],':em' => $_POST['email'],':password' => $_POST['password'],':userRole' => 2));
-					session_start();
+					$stmt->execute(array(':name' => $_POST['name'],':em' => $_POST['email'],':password' => $_POST['userPassword'],':userRole' => 2));
 					$_SESSION['flash'] = "Record inserted";
 						$_SESSION['user_id'] = $pdo->lastInsertId();
-						$_SESSION['name'] = $_POST['name'];
-						$_SESSION['userRole'] = 2;
+						$_SESSION['name'] = $row['name'];
 						header("Location: usersView.php");
 						return;
 				}
 		}
 	}
-
-
-
-	/*if ( isset($_POST['delete']) )
-	{
-		$sql = "DELETE FROM autos WHERE auto_id = :zip";
-		//echo "<pre>\n$sql\n</pre>\n";
-		$stmt = $pdo->prepare($sql);
-		$stmt->execute(array(':zip' => $_POST['auto_id']));
-	}
-*/
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>Cars List</title>
+<title>Create Account</title>
 </head>
 <body>
-<p>Add A New Profile</p>
+<p>Create an account</p>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 <p>Name:
 <input type="text" name="name"></p>
 <p>Email:
 <input type="text" name="email" ></p>
-<p>Password:
-<input type="password" name="password" ></p>
-<p>Confirm Password:
-<input type="password" name="confirmpassword" ></p>
+<p>Passsword:
+<input type="password" name="userPassword" ></p>
 <p>
-<input type="submit" name="add" value="Add"></p>
+<input type="submit" name="cancel" value="Create Account"></p>
 </form>
-
 </body>
 </html>
